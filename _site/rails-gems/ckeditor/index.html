@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ckeditor with Rails</title>
+  <meta name="description" content="目前ckeditor本身是可以通过js直接配置的，也就是说无关后台语言，拷贝过来就可以直接使用。但是之所以还要通过第三方插件整合CKeditor是因为一般需要文本编辑的时候肯定会包含图片的，正常情况下图片上传是需要走后台的，而官方的CKfinder本身是要收费的，所以需要一个第三方插件将CKeditor和一个图片...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/rails-gems/ckeditor">
+  <link rel="alternate" type="application/rss+xml" title="Eten Gstar" href="http://yourdomain.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eten Gstar</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Ckeditor with Rails</h1>
+    <p class="post-meta">Feb 2, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>目前ckeditor本身是可以通过js直接配置的，也就是说无关后台语言，拷贝过来就可以直接使用。但是之所以还要通过第三方插件整合CKeditor是因为一般需要文本编辑的时候肯定会包含图片的，正常情况下图片上传是需要走后台的，而官方的CKfinder本身是要收费的，所以需要一个第三方插件将CKeditor和一个图片上传的功能整合起来，这里我采用的插件是galetahub的CKeidtor插件。</p>
+
+<p>【1】install CKeditor</p>
+
+<p>在Gemfile中配置CKeditor插件</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> //Gemfile
+gem &quot;paperclip&quot;
+gem &#39;ckeditor&#39;
+gem &#39;responders&#39;
+</code></pre></div>
+<p>这里需要引入三个插件，paperclip、ckeditor和responders,其中paperclip是一个图片上传插件，ckeditor就不多说了，responders提供了一些response模块可以简化代码，在ckeditor和paperclip衔接的模块需要依赖，所以也要安装。
+执行命令安装插件
+<code>$ bundle install</code></p>
+
+<p>【2】Add table to your database</p>
+
+<p>执行如下命令生成migration以及models文件
+<code>rails g ckeditor:install --orm=active_record --backend=paperclip</code>
+命令成功后会在你的db/migration目录下生成一个ckeditor<em>assets文件，执行
+<code>$ rake db:migrate</code>
+        自动化建立ckeditor</em>assets表，这个表是用来存储你再进行文本编辑时上传的图片的。
+        之前的命令，除了生成migration文件外还会在models目录下创建一个ckeditor目录，目录下会有三个实体，查看可以发现一个是asset实体，另外两个分别是文件和图片的实体，大体可以知道这个是ckeditor插件用来自动维护上传的图片和文件所需的models，你可以修改has<em>attached</em>file 来定义文件存放的路径，默认情况下是存放在public/ckeditor_assets目录下的。
+到目前为止初始化工作就差不多了。</p>
+
+<p>【3】final work</p>
+
+<p>接下来做一些资源文件的配置。
+首先创建我们将会用到的一些js文件，在app/assets/javascripts目录下创建ckeditor文件夹并创建一个config.js文件（这里config.js文件有点长不方便阅读，完整的代码我就放在最后的附录里了。）</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">CKEDITOR</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">editorConfig</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="c1">//... some config here</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>之后在application.js中引入这个文件，同时引入ckeditor的初始化文件
+<code>
+//= require ckeditor/init
+//= require ckeditor/config
+</code>
+采用这种方式的话就不需要在application.html.erb中引入ckeditor.js并写初始化js代码了。
+这个时候可以在_form中使用ckeditor了。</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="sx">%= f.cktext_area :content, :class =</span><span class="o">&gt;</span> <span class="s1">&#39;class_name&#39;</span><span class="p">,</span> <span class="ss">:ckeditor</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:language</span> <span class="o">=&gt;</span> <span class="s1">&#39;zh-cn&#39;</span><span class="p">,</span> <span class="ss">:toolbar</span> <span class="o">=&gt;</span> <span class="s1">&#39;Full&#39;</span> <span class="p">}</span> 
+</code></pre></div>
+<p>这里你可以用symbol配置语言和工具栏，你也可以用config.js默认配置的选项。
+这样你就可以用ckeditor进行编辑并存储为html代码了，最后说明下显示的时候如何将html代码渲染成图文到页面
+<code>rails
+ &lt;%= raw(@message.content) %&gt;
+</code>
+在你要显示的内容前用raw方法转换下就ok了。</p>
+
+<p>【4】附录</p>
+
+<h4>app/assets/javascript/ckeditor/config.js</h4>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*</span>
+<span class="cm">Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.</span>
+<span class="cm">For licensing, see LICENSE.html or http://ckeditor.com/license</span>
+<span class="cm">*/</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">CKEDITOR</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">editorConfig</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Define changes to default configuration here. For example:</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">language</span> <span class="o">=</span> <span class="s1">&#39;zh-cn&#39;</span><span class="p">;</span>
+        <span class="c1">// config.uiColor = &#39;#AADC6E&#39;;</span>
+        <span class="cm">/* Filebrowser routes */</span>
+        <span class="c1">// The location of an external file browser, that should be launched when &quot;Browse Server&quot; button is pressed.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserBrowseUrl</span> <span class="o">=</span> <span class="s2">&quot;/ckeditor/attachment_files&quot;</span><span class="p">;</span>
+
+        <span class="c1">// The location of an external file browser, that should be launched when &quot;Browse Server&quot; button is pressed in the Flash dialog.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserFlashBrowseUrl</span> <span class="o">=</span> <span class="s2">&quot;/ckeditor/attachment_files&quot;</span><span class="p">;</span>
+
+        <span class="c1">// The location of a script that handles file uploads in the Flash dialog.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserFlashUploadUrl</span> <span class="o">=</span> <span class="s2">&quot;/ckeditor/attachment_files&quot;</span><span class="p">;</span>
+
+        <span class="c1">// The location of an external file browser, that should be launched when &quot;Browse Server&quot; button is pressed in the Link tab of Image dialog.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserImageBrowseLinkUrl</span> <span class="o">=</span> <span class="s2">&quot;/ckeditor/pictures&quot;</span><span class="p">;</span>
+
+        <span class="c1">// The location of an external file browser, that should be launched when &quot;Browse Server&quot; button is pressed in the Image dialog.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserImageBrowseUrl</span> <span class="o">=</span> <span class="s2">&quot;/ckeditor/pictures&quot;</span><span class="p">;</span>
+
+        <span class="c1">// The location of a script that handles file uploads in the Image dialog.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserImageUploadUrl</span> <span class="o">=</span> <span class="s2">&quot;/ckeditor/pictures&quot;</span><span class="p">;</span>
+
+        <span class="c1">// The location of a script that handles file uploads.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserUploadUrl</span> <span class="o">=</span> <span class="s2">&quot;/ckeditor/attachment_files&quot;</span><span class="p">;</span>
+
+        <span class="nx">config</span><span class="p">.</span><span class="nx">allowedContent</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+        <span class="c1">// Rails CSRF token</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserParams</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">csrf_token</span><span class="p">,</span> <span class="nx">csrf_param</span><span class="p">,</span> <span class="nx">meta</span><span class="p">,</span> <span class="nx">metas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">),</span>
+            <span class="nx">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">metas</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">meta</span> <span class="o">=</span> <span class="nx">metas</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+
+                <span class="k">switch</span> <span class="p">(</span><span class="nx">meta</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="s2">&quot;csrf-token&quot;</span><span class="o">:</span>
+                    <span class="nx">csrf_token</span> <span class="o">=</span> <span class="nx">meta</span><span class="p">.</span><span class="nx">content</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s2">&quot;csrf-param&quot;</span><span class="o">:</span>
+                    <span class="nx">csrf_param</span> <span class="o">=</span> <span class="nx">meta</span><span class="p">.</span><span class="nx">content</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">default</span><span class="o">:</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">csrf_param</span> <span class="o">!==</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="nx">csrf_token</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">params</span><span class="p">[</span><span class="nx">csrf_param</span><span class="p">]</span> <span class="o">=</span> <span class="nx">csrf_token</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="nx">params</span><span class="p">;</span>
+        <span class="p">};</span>
+
+        <span class="nx">config</span><span class="p">.</span><span class="nx">addQueryString</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">queryString</span> <span class="o">=</span> <span class="p">[];</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">params</span><span class="p">)</span> <span class="nx">queryString</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">params</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="nx">url</span> <span class="o">+</span> <span class="p">((</span><span class="nx">url</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&quot;&amp;&quot;</span><span class="o">:</span> <span class="s2">&quot;?&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">queryString</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&amp;&quot;</span><span class="p">);</span>
+        <span class="p">};</span>
+
+        <span class="c1">// Integrate Rails CSRF token into file upload dialogs (link, image, attachment and flash)</span>
+        <span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;dialogDefinition&#39;</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Take the dialog name and its definition from the event data.</span>
+            <span class="kd">var</span> <span class="nx">dialogName</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">dialogDefinition</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">definition</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">upload</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">tools</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">([</span><span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="s1">&#39;flash&#39;</span><span class="p">],</span> <span class="nx">dialogName</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">content</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dialogDefinition</span><span class="p">.</span><span class="nx">getContents</span><span class="p">(</span><span class="s1">&#39;Upload&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nx">dialogDefinition</span><span class="p">.</span><span class="nx">getContents</span><span class="p">(</span><span class="s1">&#39;upload&#39;</span><span class="p">));</span>
+                <span class="nx">upload</span> <span class="o">=</span> <span class="p">(</span><span class="nx">content</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span><span class="o">:</span> <span class="nx">content</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;upload&#39;</span><span class="p">));</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="nx">upload</span> <span class="o">&amp;&amp;</span> <span class="nx">upload</span><span class="p">.</span><span class="nx">filebrowser</span> <span class="o">&amp;&amp;</span> <span class="nx">upload</span><span class="p">.</span><span class="nx">filebrowser</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">upload</span><span class="p">.</span><span class="nx">filebrowser</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">filebrowserParams</span><span class="p">();</span>
+                    <span class="nx">upload</span><span class="p">.</span><span class="nx">action</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">addQueryString</span><span class="p">(</span><span class="nx">upload</span><span class="p">.</span><span class="nx">action</span><span class="p">,</span> <span class="nx">upload</span><span class="p">.</span><span class="nx">filebrowser</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+        <span class="c1">// Toolbar groups configuration.</span>
+        <span class="nx">config</span><span class="p">.</span><span class="nx">toolbar</span> <span class="o">=</span> <span class="p">[{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;document&#39;</span><span class="p">,</span>
+            <span class="nx">groups</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="s1">&#39;document&#39;</span><span class="p">,</span> <span class="s1">&#39;doctools&#39;</span><span class="p">],</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;clipboard&#39;</span><span class="p">,</span>
+            <span class="nx">groups</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;clipboard&#39;</span><span class="p">,</span> <span class="s1">&#39;undo&#39;</span><span class="p">],</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Cut&#39;</span><span class="p">,</span> <span class="s1">&#39;Copy&#39;</span><span class="p">,</span> <span class="s1">&#39;Paste&#39;</span><span class="p">,</span> <span class="s1">&#39;PasteText&#39;</span><span class="p">,</span> <span class="s1">&#39;PasteFromWord&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;Undo&#39;</span><span class="p">,</span> <span class="s1">&#39;Redo&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="c1">// { name: &#39;editing&#39;, groups: [ &#39;find&#39;, &#39;selection&#39;, &#39;spellchecker&#39; ], items: [ &#39;Find&#39;, &#39;Replace&#39;, &#39;-&#39;, &#39;SelectAll&#39;, &#39;-&#39;, &#39;Scayt&#39; ] },</span>
+        <span class="c1">// { name: &#39;forms&#39;, items: [ &#39;Form&#39;, &#39;Checkbox&#39;, &#39;Radio&#39;, &#39;TextField&#39;, &#39;Textarea&#39;, &#39;Select&#39;, &#39;Button&#39;, &#39;ImageButton&#39;, &#39;HiddenField&#39; ] },</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;links&#39;</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Link&#39;</span><span class="p">,</span> <span class="s1">&#39;Unlink&#39;</span><span class="p">,</span> <span class="s1">&#39;Anchor&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;insert&#39;</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Image&#39;</span><span class="p">,</span> <span class="s1">&#39;Flash&#39;</span><span class="p">,</span> <span class="s1">&#39;Table&#39;</span><span class="p">,</span> <span class="s1">&#39;HorizontalRule&#39;</span><span class="p">,</span> <span class="s1">&#39;SpecialChar&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;paragraph&#39;</span><span class="p">,</span>
+            <span class="nx">groups</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;indent&#39;</span><span class="p">,</span> <span class="s1">&#39;blocks&#39;</span><span class="p">,</span> <span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="s1">&#39;bidi&#39;</span><span class="p">],</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;NumberedList&#39;</span><span class="p">,</span> <span class="s1">&#39;BulletedList&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;Outdent&#39;</span><span class="p">,</span> <span class="s1">&#39;Indent&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;Blockquote&#39;</span><span class="p">,</span> <span class="s1">&#39;CreateDiv&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyLeft&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyCenter&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyRight&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyBlock&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;styles&#39;</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Styles&#39;</span><span class="p">,</span> <span class="s1">&#39;Format&#39;</span><span class="p">,</span> <span class="s1">&#39;Font&#39;</span><span class="p">,</span> <span class="s1">&#39;FontSize&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;colors&#39;</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;TextColor&#39;</span><span class="p">,</span> <span class="s1">&#39;BGColor&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;basicstyles&#39;</span><span class="p">,</span>
+            <span class="nx">groups</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;basicstyles&#39;</span><span class="p">,</span> <span class="s1">&#39;cleanup&#39;</span><span class="p">],</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Bold&#39;</span><span class="p">,</span> <span class="s1">&#39;Italic&#39;</span><span class="p">,</span> <span class="s1">&#39;Underline&#39;</span><span class="p">,</span> <span class="s1">&#39;Strike&#39;</span><span class="p">,</span> <span class="s1">&#39;Subscript&#39;</span><span class="p">,</span> <span class="s1">&#39;Superscript&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;RemoveFormat&#39;</span><span class="p">]</span>
+        <span class="p">}];</span>
+
+        <span class="nx">config</span><span class="p">.</span><span class="nx">toolbar_mini</span> <span class="o">=</span> <span class="p">[{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;paragraph&#39;</span><span class="p">,</span>
+            <span class="nx">groups</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;indent&#39;</span><span class="p">,</span> <span class="s1">&#39;blocks&#39;</span><span class="p">,</span> <span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="s1">&#39;bidi&#39;</span><span class="p">],</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;NumberedList&#39;</span><span class="p">,</span> <span class="s1">&#39;BulletedList&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;Outdent&#39;</span><span class="p">,</span> <span class="s1">&#39;Indent&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;Blockquote&#39;</span><span class="p">,</span> <span class="s1">&#39;CreateDiv&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyLeft&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyCenter&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyRight&#39;</span><span class="p">,</span> <span class="s1">&#39;JustifyBlock&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;styles&#39;</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Font&#39;</span><span class="p">,</span> <span class="s1">&#39;FontSize&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;colors&#39;</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;TextColor&#39;</span><span class="p">,</span> <span class="s1">&#39;BGColor&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;basicstyles&#39;</span><span class="p">,</span>
+            <span class="nx">groups</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;basicstyles&#39;</span><span class="p">,</span> <span class="s1">&#39;cleanup&#39;</span><span class="p">],</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Bold&#39;</span><span class="p">,</span> <span class="s1">&#39;Italic&#39;</span><span class="p">,</span> <span class="s1">&#39;Underline&#39;</span><span class="p">,</span> <span class="s1">&#39;Strike&#39;</span><span class="p">,</span> <span class="s1">&#39;Subscript&#39;</span><span class="p">,</span> <span class="s1">&#39;Superscript&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;RemoveFormat&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;insert&#39;</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Image&#39;</span><span class="p">,</span> <span class="s1">&#39;Table&#39;</span><span class="p">,</span> <span class="s1">&#39;HorizontalRule&#39;</span><span class="p">,</span> <span class="s1">&#39;SpecialChar&#39;</span><span class="p">]</span>
+        <span class="p">}];</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Eten Gstar</li>
+          <li><a href="mailto:dandananddada@gmail.com">dandananddada@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/dandananddada">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">dandananddada</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/dandananddada">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">dandananddada</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
