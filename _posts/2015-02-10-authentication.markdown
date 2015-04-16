@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: rails-gems
-date:   2015-02-10 16:35:41
+date:   2015-02-10
 title:  Devise with Rails
 summary: Devise is a flexible authentication solution for Rails based on Warden.
 ---

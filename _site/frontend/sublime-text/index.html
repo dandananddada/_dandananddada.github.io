@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sublime Text</title>
+  <meta name="description" content="Sublime Text是一款相对好用的前端开发工具，并且可以无限期的免费试用。可以在官网下载安装特定系统下的版本：http://www.sublimetext.com/sublime本身的功能并不是十分强大，但他可以通过package control安装插件来增强功能。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/frontend/sublime-text">
+  <link rel="alternate" type="application/rss+xml" title="Eten Gstar" href="http://yourdomain.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eten Gstar</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Sublime Text</h1>
+    <p class="post-meta">Oct 29, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>Sublime Text是一款相对好用的前端开发工具，并且可以无限期的免费试用。
+可以在官网下载安装特定系统下的版本：http://www.sublimetext.com/
+sublime本身的功能并不是十分强大，但他可以通过package control安装插件来增强功能。</p>
+
+<p>【1】Sublime Text常用快捷键</p>
+
+<p>常用的快捷键有文本格式化，文件切换，文件/函数查找，多行编辑，上下行互换，复制/粘贴，删除当前行，查找，单/多行注释，代码折叠，跳转到开始结束标记。
+个人根据编程习惯进行一定的设置。
+在Preferences-&gt;Key Bindings-User中添加如下语句，进行快捷键自定义。</p>
+
+<p>1.格式化快捷键：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+shift+f&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;reindent&quot;</span> <span class="p">}</span>
+</code></pre></div>
+<p>2.删除当前行：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+k&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;run_macro_file&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="o">:</span> <span class="s2">&quot;res://Packages/Default/Delete Line.sublime-macro&quot;</span><span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+<p>3.文件切换：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+shift+right&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;next_view&quot;</span> <span class="p">}</span>
+<span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+shift+left&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;prev_view&quot;</span> <span class="p">}</span>
+</code></pre></div>
+<p>4.查找替换：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+f&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;show_panel&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;panel&quot;</span><span class="o">:</span> <span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="s2">&quot;reverse&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+<p>5.多行编辑：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+up&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;select_lines&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;forward&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span> <span class="p">}</span>
+<span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+down&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;select_lines&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;forward&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+<p>6.上下行互换：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+up&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;swap_line_up&quot;</span> <span class="p">}</span>
+<span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+down&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;swap_line_down&quot;</span> 
+</code></pre></div>
+<p>7.折叠代码： </p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+left&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;fold&quot;</span> <span class="p">},</span>
+<span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+right&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;unfold&quot;</span> <span class="p">},</span>
+</code></pre></div>
+<p>8.跳转到开始/结束标记：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+m&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;to&quot;</span><span class="o">:</span> <span class="s2">&quot;brackets&quot;</span><span class="p">}</span> <span class="p">},</span>
+</code></pre></div>
+<p>9.单/多行注释</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+forward_slash&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;toggle_comment&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;block&quot;</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span> <span class="p">},</span>
+<span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+shift+forward_slash&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;toggle_comment&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;block&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">},</span>
+</code></pre></div>
+<p>10.文件查找</p>
+
+<p>函数查找在输入函数名前加&#39;@&#39;，跳转指定行在行数前加&#39;：&#39;。</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+p&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;show_overlay&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;overlay&quot;</span><span class="o">:</span> <span class="s2">&quot;goto&quot;</span><span class="p">,</span> <span class="s2">&quot;show_files&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">},</span>
+</code></pre></div>
+<p>11.最后这里给出Mac下同样快捷键设置：</p>
+
+<p>Mac环境下Key Bindings-User设置如下：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+d&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;run_macro_file&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="o">:</span> <span class="s2">&quot;res://Packages/Default/Delete Line.sublime-macro&quot;</span><span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+f&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;show_panel&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;panel&quot;</span><span class="o">:</span> <span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="s2">&quot;reverse&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+m&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;to&quot;</span><span class="o">:</span> <span class="s2">&quot;brackets&quot;</span><span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+forward_slash&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;toggle_comment&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;block&quot;</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+up&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;swap_line_up&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+down&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;swap_line_down&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+left&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;move&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;by&quot;</span><span class="o">:</span> <span class="s2">&quot;subwords&quot;</span><span class="p">,</span> <span class="s2">&quot;forward&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+right&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;move&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;by&quot;</span><span class="o">:</span> <span class="s2">&quot;subword_ends&quot;</span><span class="p">,</span> <span class="s2">&quot;forward&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+up&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;select_lines&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;forward&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+down&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;select_lines&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;forward&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+left&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;fold&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;alt+right&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;unfold&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+shift+f&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;reindent&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+shift+right&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;next_view&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+shift+left&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;prev_view&quot;</span> <span class="p">},</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>【2】Sublime Text常用插件</p>
+
+<p>1.Package Control</p>
+
+<p>快捷键<code>ctrl+~</code>调出Sublime Text控制台，然后输入以下代码（Sublime Text3）安装Package Control，之后就可以通过Package Control工具安装其他插件了。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import urllib.request,os,hashlib; h = &#39;7183a2d3e96f11eeadd761d777e62404&#39; + &#39;e330c659d4bb41d3bdf022e94cab3cd0&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &#39;http://sublime.wbond.net/&#39; + pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &#39;wb&#39; ).write(by)
+</code></pre></div>
+<p>Sublime Text2请参照网站<a href="https://sublime.wbond.net/installation">https://sublime.wbond.net/installation</a>具体代码进行Package Control的安装。
+使用Package Control安装其他插件，在Sublime Text命令窗口中输入install package，之后输入需要安装的插件名称回车确定就可以了。</p>
+
+<p>2.Emmet</p>
+
+<p>Emmet是一个快速输入工具，支持Css方式语法完成Html/Css的快速编辑，具体使用方法可以参考官网：<a href="http://docs.emmet.io/">http://docs.emmet.io/</a></p>
+
+<p>3.BracketHighlighter</p>
+
+<p>BracketHighlighter是一个开始/结束标记提示工具，他可以在行数栏前将一组开始结束标记标记显示出来。</p>
+
+<p>4.SideBarEnhancements</p>
+
+<p>SideBarEnhancements是侧栏增强工具，他允许用户在文件列表侧栏完成文件增加，移动删除等功能。</p>
+
+<p>5.Terminal</p>
+
+<p>Terminal是一个命令窗口工具，他允许用户在当前编辑文件的目录下调出Terminal。
+默认快捷键为ctrl+shift+t</p>
+
+<p>6.Git</p>
+
+<p>Git允许用户在命令窗口下执行Git操作。</p>
+
+<p>7.Theme-Flatland</p>
+
+<p>Theme-Flatland是Sublime Text一个主题皮肤，Theme-Flatland安装完成后在Preference-&gt;Setting-User中，添加如下代码：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;color_scheme&quot;</span><span class="o">:</span> <span class="s2">&quot;Packages/Theme - Flatland/Flatland Dark.tmTheme&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;theme&quot;</span><span class="o">:</span> <span class="s2">&quot;Flatland Dark.sublime-theme&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>重启Sublime Text就会应用新的皮肤和代码配色。</p>
+
+<p>8.AutoFileName</p>
+
+<p>AutoFileName可以在用户在输入引用文件路径时给出提示，方便快速输入。</p>
+
+<p>9.Color Highlighter</p>
+
+<p>Color Highlighter可以使颜色码显示为当前颜色码真实眼色</p>
+
+<p>10.Csscomb</p>
+
+<p>Csscomb可以按照一定的格式格式化css代码，默认快捷键为ctrl+shift+c</p>
+
+<p>11.DocBlockr</p>
+
+<p>DocBlockr可以自动生成注释，在函数前输入/**后键入Tab会自动生成函数注释。</p>
+
+<p>12.jQuery</p>
+
+<p>jQuery可以提供jQuery代码提示，方便快速开发。在输入jQuery相关对象/方法后键入Tab就会自动生成相应函数。</p>
+
+<p>13.Sass</p>
+
+<p>Sass可以给Sass文件提供Css代码颜色。</p>
+
+<p>14.Sass Snippets</p>
+
+<p>Sass Snippets可以提供Sass常用语法，方便快速开发。</p>
+
+<p>15.AngularJS</p>
+
+<p>AngularJS可以提高AngularJS代码提示，方便快速开发。</p>
+
+<p>16.其他一些插件如PhpCs,JsFormat,Alignment,Tag就不在此一一介绍，更多插件可以在<a href="https://sublime.wbond.net/">https://sublime.wbond.net/</a>查找安装</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Eten Gstar</li>
+          <li><a href="mailto:dandananddada@gmail.com">dandananddada@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/dandananddada">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">dandananddada</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/dandananddada">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">dandananddada</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

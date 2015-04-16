@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: rails-gems
-date:   2015-02-01 16:35:41
+date:   2015-02-01
 title:  Paperclip with Rails
 summary: Paperclip is intended as an easy file attachment library for Active Record.
 ---

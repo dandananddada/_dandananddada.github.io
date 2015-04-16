@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: rails-gems
-date:   2015-02-09 16:35:41
+date:   2015-02-09
 title:  Bootstrap-modal with Rails
 summary: Extends Bootstrap's native modals to provide additional functionality.
 ---

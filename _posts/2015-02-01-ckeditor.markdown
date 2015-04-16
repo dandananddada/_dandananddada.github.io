@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: rails-gems
-date:   2015-02-01 16:35:41
+date:   2015-02-01
 title:  Ckeditor with Rails
 summary: CKEditor is a WYSIWYG text editor designed to simplify web content creation. It brings common word processing features directly to your web pages. 
 ---
