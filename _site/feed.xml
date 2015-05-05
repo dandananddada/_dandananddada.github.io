@@ -6,9 +6,431 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Apr 2015 23:42:42 +0800</pubDate>
-    <lastBuildDate>Thu, 16 Apr 2015 23:42:42 +0800</lastBuildDate>
+    <pubDate>Tue, 05 May 2015 10:16:31 +0800</pubDate>
+    <lastBuildDate>Tue, 05 May 2015 10:16:31 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Vim</title>
+        <description>&lt;p&gt;vim编辑器的介绍这里就不详细说了，对于不是十分了解的人，这里简单说明下vim是有两种模式的，编辑模式和命令模式。&lt;/p&gt;
+
+&lt;p&gt;在命令模式下通过命令可以快速的选取、操作文本，也就是其他编辑器的快捷键功能，但vim的命令模式会更加复杂强大一些。&lt;/p&gt;
+
+&lt;p&gt;编辑模式就是正常的代码编写，文本录入了。两种模式可以通过快捷键进行切换。&lt;/p&gt;
+
+&lt;p&gt;另外vim本身的功能毕竟有限，尚不足以与IDE比较，但是vim本身存在很多第三方插件，可以选择性拓展。根据具体的语言和插件选择，vim完全可以成为一个强大的开发工具。&lt;/p&gt;
+
+&lt;h3 id=&quot;常用快捷键&quot;&gt;常用快捷键&lt;/h3&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;快捷键&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;h&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;向左移动光标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;l&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;向右移动光标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;j&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;向下移动光标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;k&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;向上移动光标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;w&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;光标移动到下一个单词首字母&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;b&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;光标移动到上一个单词首字母&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;e&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;光标移动到下一个单词最后一个字母&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;shift+5&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;找到&amp;#39;()&amp;#39;,&amp;#39;[]&amp;#39;,&amp;#39;{}&amp;#39;匹配项位置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;gg&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;光标移动到文件开始&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;G&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;光标移动到文件结束&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;12G&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;光标移动到第12行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;12gg&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;光标移动到第12行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;/text&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;查找文件中text关键字，按n查询下一个,N查询上一个&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;o&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标下一行位置插入段落并进入编辑模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;O&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标上一行位置插入段落并进入编辑模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;i&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标当前位置左侧进入编辑模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;I&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标当前段落开始处位置进入编辑模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;a&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标当前位置右侧进入编辑模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;A&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标当前段落结束处位置进入编辑模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;x&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;删除光标当前位置处字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;X&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;删除光标当前位置处前一个字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;d&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;配合数字键和方向键可以选择光标位置处左右多个字符，上下多行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;D&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;删除从光标位置开始到行尾全部字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;r&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;修改光标当前位置处字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;R&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在当前光标位置出进入编辑模式，并逐次修改下面所有字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;u&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;撤销上一步操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;crtl+r&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;恢复上一步撤销&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;U&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;撤销当前行所有修改&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;v&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;选取光标所在位置字符，配合方向键可以选取多个字符或者行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;V&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;选取当前行,配合方向键可以选取多行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;y&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;复制光标所选中字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;Y&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;复制光标所在位置当前行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;p&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标所在位置后粘贴复制内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;P&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;在光标所在位置前粘贴复制内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;J&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;合并光标当前位置行与下一行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;H&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;到屏幕顶端&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;L&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;到屏幕底端&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;.&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;重复上一次命令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;ggVG&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;全选&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;ddp&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;当前行与下一行位置互换&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;daw&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;删除光标所在位置出单词,d2w删除光标所在位置及其后工两个单词，标点符号算一个单词&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;esc&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;退出编辑模式到命令模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;:w&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;保存当前修改&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;:w!&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;强制保存当前修改&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;:q&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;退出vim&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;:q!&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;强制退出vim&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;:wq&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;保存修改并退出vim&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;常用设置&quot;&gt;常用设置&lt;/h3&gt;
+
+&lt;p&gt;以mac系统为例，vim相关文件会以隐藏文件存储在当前登录账户根目录下（Users/username），文件夹名称为.vim。&lt;/p&gt;
+
+&lt;p&gt;vim的配置文件也以隐藏文件存储在当前登录账户的根目录下，文件名称为.vimrc。&lt;/p&gt;
+
+&lt;h4 id=&quot;文本设置&quot;&gt;文本设置&lt;/h4&gt;
+
+&lt;p&gt;一般常用设置包括语法高亮、tab占位、设置行号显示、代码颜色、空格显示等。&lt;/p&gt;
+
+&lt;p&gt;具体配置代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;show number line&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;set syntax heightlight for mac&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;syntax&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;set markdown heightlight&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FileType&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;modula2&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;filetype&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;set corret text indent by syntax&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;filetype&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;indent&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;set tab key as two space&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expandtab&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;shiftwidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;&amp;quot; Display extra whitespace as .&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;listchars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;··&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;代码颜色设置&quot;&gt;代码颜色设置&lt;/h4&gt;
+
+&lt;p&gt;这里单独说明下代码颜色的设置，一般vim代码颜色文件都存放在。&lt;/p&gt;
+
+&lt;p&gt;vim目录下的colors目录中。你可以在google或者github查找下载相关的vim代码配色，然后拷贝到该位置。其中关键词检索录入vim colorscheme即可。&lt;/p&gt;
+
+&lt;p&gt;这里我使用的是github的配色，首先将配色文件拷贝到colors目录下。&lt;/p&gt;
+
+&lt;p&gt;然后在.vimrc文件中加入如下语句，设置vim启动时采用的配色。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;nx&quot;&gt;colorscheme&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;github&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;常用插件&quot;&gt;常用插件&lt;/h3&gt;
+
+&lt;p&gt;vim的插件一般分散都存放在.vim目录下，管理起来不是十分方便。&lt;/p&gt;
+
+&lt;p&gt;这里为了方便插件的管理采用pathogen。&lt;/p&gt;
+
+&lt;h4 id=&quot;pathogen&quot;&gt;&lt;strong&gt;pathogen&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;在.vim目录下创建一个autoload文件夹和一个bundle文件夹。&lt;/p&gt;
+
+&lt;p&gt;在autoload文件夹下获取到pathogen的配置文件:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在.vimrc配置文件中添加pathogen的启动方法:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ execute pathogen#infect()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;之后使用pathogen安装插件就简单多了，只需要在bundle中通过git将相关插件clone到本地即可。&lt;/p&gt;
+
+&lt;h4 id=&quot;nerdtree&quot;&gt;&lt;strong&gt;nerdtree&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;nerdtree会将打开的文件所在的文件夹以树结构展现出来。&lt;/p&gt;
+
+&lt;p&gt;进到.vim/bundle目录下，执行clone命令拷贝项目到本地:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git clone https://github.com/scrooloose/nerdtree.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;修改.vimrc文件:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;nerd tree&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vimenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NERDTree&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;StdinReadPre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;std_in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VimEnter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;s:std_in&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NERDTree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;endif&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bufenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;winnr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;b:NERDTreeType&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NERDTreeType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;primary&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;endif&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NERDTreeToggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这样通过vim打开一个文件的时候默认就加载nerdtree插件，当你想隐藏的时候用组合键&lt;code&gt;ctrl+n&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;h4 id=&quot;tagbar&quot;&gt;&lt;strong&gt;Tagbar&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;tagbar可以将你当前打开的文件的结构以索引目录的形式罗列出来。&lt;/p&gt;
+
+&lt;p&gt;进到.vim/bundle目录下，执行clone命令拷贝项目到本地:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git clone https://github.com/majutsushi/tagbar&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;修改.vimrc文件:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tagbar_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tagbar_autofocus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;nmap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;F8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TagbarToggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VimEnter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nested&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tagbar&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;autoopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这边默认配置是通过F8显示隐藏tagbar窗口，你也可以根据自己需求定义。&lt;/p&gt;
+
+&lt;h4 id=&quot;ctrlp&quot;&gt;&lt;strong&gt;ctrlp&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;ctrlp可以帮助你快速查找打开文件，它默认会在你当前打开文件根目录搜索你键入关键字匹配的文件。&lt;/p&gt;
+
+&lt;p&gt;进到.vim/bundle目录下，执行clone命令拷贝项目到本地:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git clone https://github.com/kien/ctrlp.vim.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;修改.vimrc文件:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ctrlp, for file search&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wildignore&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=*&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/tmp/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;so&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;swp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;png&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jpg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jpeg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gif&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctrlp_custom_ignore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;\v[\/]\.(git|hg|svn)$&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;tcomment&quot;&gt;&lt;strong&gt;tComment&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;tComment是一款快速注释的插件，它可以根据你当前文件的语言自动决定注释语法。 &lt;/p&gt;
+
+&lt;p&gt;进到.vim/bundle目录下，执行clone命令拷贝项目到本地:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git clone https://github.com/vim-scripts/tComment.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;tComment可以不做特殊配置直接使用。&lt;/p&gt;
+
+&lt;p&gt;注释和取消注释的快捷键都是&lt;code&gt;ctrl+/+/&lt;/code&gt;，你也可以选择多行然后执行注释命令进行多行注释。&lt;/p&gt;
+
+&lt;h4 id=&quot;fugitive&quot;&gt;&lt;strong&gt;fugitive&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;fugitive是一个git插件，它允许你在vim的命令模式下通过类似于git的命令执行git命令。&lt;/p&gt;
+
+&lt;p&gt;比如可以通过&lt;code&gt;:Gstatus&lt;/code&gt;执行&lt;code&gt;git status&lt;/code&gt;命令，查看文件修改情况。&lt;/p&gt;
+
+&lt;p&gt;进到.vim/bundle目录下，执行clone命令拷贝项目到本地:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git clone https://github.com/tpope/vim-fugitive.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;fugitive可以不做特殊配置直接使用。&lt;/p&gt;
+
+&lt;h4 id=&quot;emmet-vim&quot;&gt;&lt;strong&gt;emmet-vim&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;emmet是用来快速输入html代码的插件，emmet-vim是其在vim下的插件。&lt;/p&gt;
+
+&lt;p&gt;进到.vim/bundle目录下，执行clone命令拷贝项目到本地:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git clone https://github.com/mattn/emmet-vim.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;不需要做额外的配置，再次重启vim就可以使用了。&lt;/p&gt;
+
+&lt;p&gt;和在其他编辑器中不同，emmet的使用不再用tab出发，而是用组合键&lt;code&gt;ctrl+y+,&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果你想自己定义组合键就在.vimrc中加入如下配置:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;emmet&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user_emmet_leader_key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;C-Z&amp;gt;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这样触发emmet的组合键就变成&lt;code&gt;ctrl+z+,&lt;/code&gt;了，但是&lt;code&gt;,&lt;/code&gt;是必须要的，不能省略。&lt;/p&gt;
+
+&lt;h4 id=&quot;vim-surround&quot;&gt;&lt;strong&gt;vim-surround&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;vim-surround是一个方便快速编辑父子层文本的插件，比如快速删除一个元素的外层元素，给一段文本添加div元素等。&lt;/p&gt;
+
+&lt;p&gt;进到.vim/bundle目录下，执行clone命令拷贝项目到本地:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git clone https://github.com/tpope/vim-surround.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;重启vim就可以用surround的命令了，这里简单介绍几个个常用的:&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;命令&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;说明&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;演示&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;cs&amp;quot;&amp;#39;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;修改字符&amp;quot;&amp;quot;为&amp;#39;&amp;#39;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;code&gt;&amp;quot;hello world&amp;quot;&lt;/code&gt;  执行命令&lt;code&gt;cs&amp;quot;&amp;#39;&lt;/code&gt;后修改为  &lt;code&gt;&amp;#39;hello world&amp;#39;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;ds&amp;quot;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;删除包裹符号&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;code&gt;&amp;quot;hello world&amp;quot;&lt;/code&gt;  执行命令&lt;code&gt;ds&amp;quot;&lt;/code&gt;后修改为   &lt;code&gt;hello world&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;cst&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;修改父级元素&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;code&gt;&amp;lt;p&amp;gt;hello world&amp;lt;/p&amp;gt;&lt;/code&gt;    执行命令&lt;code&gt;cst &amp;lt;h1&amp;gt;&lt;/code&gt;后修改为 &lt;code&gt;&amp;lt;h1&amp;gt;hello world&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;dst&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;删除父级元素&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;code&gt;&amp;lt;p&amp;gt;hello world&amp;lt;/p&amp;gt;&lt;/code&gt;    执行命令&lt;code&gt;dst&lt;/code&gt;后修改为 &lt;code&gt;hello world&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;VS&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;添加父级元素&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;code&gt;hello world&lt;/code&gt;    执行命令&lt;code&gt;VS &amp;lt;a&amp;gt;&lt;/code&gt;后修改为    &lt;code&gt;&amp;lt;a&amp;gt;hello world&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h4 id=&quot;delimitmate、matchit、auto-save&quot;&gt;&lt;strong&gt;delimitMate、matchit、auto-save&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;delimitMate会自动帮你完成&lt;code&gt;&amp;#39;&lt;/code&gt;、&lt;code&gt;&amp;quot;&lt;/code&gt;、&lt;code&gt;(&lt;/code&gt;、&lt;code&gt;[&lt;/code&gt;、&lt;code&gt;{&lt;/code&gt; 等符号的补全。&lt;/p&gt;
+
+&lt;p&gt;matchit可以用&lt;code&gt;%&lt;/code&gt;代替&lt;code&gt;shitf+F5&lt;/code&gt;查找&lt;code&gt;&amp;#39;&lt;/code&gt;、&lt;code&gt;&amp;quot;&lt;/code&gt;、&lt;code&gt;(&lt;/code&gt;、&lt;code&gt;[&lt;/code&gt;、&lt;code&gt;{&lt;/code&gt; 等对应符号。&lt;/p&gt;
+
+&lt;p&gt;auto-save会在文件修改时自动保存，省去了反复执行&lt;code&gt;:w&lt;/code&gt;命令。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 05 May 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/develop/vim</link>
+        <guid isPermaLink="true">http://yourdomain.com/develop/vim</guid>
+        
+        
+        <category>develop</category>
+        
+      </item>
     
       <item>
         <title>Soft delete with Rails</title>
@@ -76,16 +498,16 @@ Rails会生成如下migration文件&lt;/p&gt;
       <item>
         <title>Rspec and Capybara with Rails</title>
         <description>&lt;p&gt;Rails本身是提供一套自动化测试体系的，对于比较小型或者时间短促的项目采用原生的测试体系也是可以的，当然第三方自动化测试插件语法、功能、开发上相对也会更加便捷一些。
-这里要介绍的插件有rspec-rail、capybara、factory&lt;em&gt;girl&lt;/em&gt;rails、database_cleaner以及guard-rspec。&lt;/p&gt;
+这里要介绍的插件有rspec-rail、capybara、factory_girl_rails、database_cleaner以及guard-rspec。&lt;/p&gt;
 
 &lt;p&gt;【1】gems introduction&lt;/p&gt;
 
 &lt;p&gt;首先简单对这些gems做一下介绍。
-rspec-rail 是一个自动化测试插件，github地址：https://github.com/rspec/rspec-rails。
-capybara是一个集成测试插件，它提供了更加语义话的语法模拟用户操作，githbu地址：https://github.com/jnicklas/capybara。
-factory&lt;em&gt;girl&lt;/em&gt;rails是用来替代rails fixtures的测试数据插件，gihubt地址：https://github.com/thoughtbot/factory&lt;em&gt;girl&lt;/em&gt;rails，文档地址：https://github.com/thoughtbot/factory&lt;em&gt;girl/blob/master/GETTING&lt;/em&gt;STARTED.md。
-database&lt;em&gt;cleaner是用来清理数据库的插件，github地址：https://github.com/DatabaseCleaner/database&lt;/em&gt;cleaner
-guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并自动执行测试用例。gihubt地址：https://github.com/guard/guard-rspec。&lt;/p&gt;
+rspec-rail 是一个自动化测试插件，github地址：&lt;a href=&quot;https://github.com/rspec/rspec-rails%E3%80%82&quot;&gt;https://github.com/rspec/rspec-rails。&lt;/a&gt;
+capybara是一个集成测试插件，它提供了更加语义话的语法模拟用户操作，githbu地址：&lt;a href=&quot;https://github.com/jnicklas/capybara%E3%80%82&quot;&gt;https://github.com/jnicklas/capybara。&lt;/a&gt;
+factory_girl_rails是用来替代rails fixtures的测试数据插件，gihubt地址：&lt;a href=&quot;https://github.com/thoughtbot/factory_girl_rails%EF%BC%8C%E6%96%87%E6%A1%A3%E5%9C%B0%E5%9D%80%EF%BC%9Ahttps://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md%E3%80%82&quot;&gt;https://github.com/thoughtbot/factory_girl_rails，文档地址：https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md。&lt;/a&gt;
+database_cleaner是用来清理数据库的插件，github地址：&lt;a href=&quot;https://github.com/DatabaseCleaner/database_cleaner&quot;&gt;https://github.com/DatabaseCleaner/database_cleaner&lt;/a&gt;
+guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并自动执行测试用例。gihubt地址：&lt;a href=&quot;https://github.com/guard/guard-rspec%E3%80%82&quot;&gt;https://github.com/guard/guard-rspec。&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;【2】install gems
 在Gemfile中添加如下代码：&lt;/p&gt;
@@ -106,7 +528,7 @@ guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并
 
 &lt;p&gt;1】执行如下命令安装rspec-rails
 &lt;code&gt;$ rails generate rspec:install&lt;/code&gt;
-之后rspec会在项目根目录下创建一个spec目录以及一个rails&lt;em&gt;helper.rb文件和一个spec&lt;/em&gt;helper.rb文件。  下面内容将主要对rails_helper.rb文件进行配置。&lt;/p&gt;
+之后rspec会在项目根目录下创建一个spec目录以及一个rails_helper.rb文件和一个spec_helper.rb文件。  下面内容将主要对rails_helper.rb文件进行配置。&lt;/p&gt;
 
 &lt;p&gt;2】整合capybara和rspec，首先打开rails_helper.rb文件，你会看到文件头部有自动生成如下语句：&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;RAILS_ENV&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;test&amp;#39;&lt;/span&gt;
@@ -123,13 +545,13 @@ guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这样就可以在测试类中调用Capybara的方法了。&lt;/p&gt;
 
-&lt;p&gt;3】整合factory&lt;em&gt;girl&lt;/em&gt;rails，这里factory&lt;em&gt;girl&lt;/em&gt;rails可以采用support配置方式来整合，也可以像Capybara一样直接在rails&lt;em&gt;helper.rb中添加引用，我先说明引用方式的整合。
-同Capybara类似，在rails&lt;/em&gt;helper.rb的RSpec.configure代码段中添加如下代码：&lt;/p&gt;
+&lt;p&gt;3】整合factory_girl_rails，这里factory_girl_rails可以采用support配置方式来整合，也可以像Capybara一样直接在rails_helper.rb中添加引用，我先说明引用方式的整合。
+同Capybara类似，在rails_helper.rb的RSpec.configure代码段中添加如下代码：&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;FactoryGirl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Syntax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Methods&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这样就可以在测试文件中使用factory&lt;em&gt;girl的方法了。
+&lt;p&gt;这样就可以在测试文件中使用factory_girl的方法了。
 另外一种稍微复杂的方式是通过support整合，这里简单说明下如何配置，但是并不推荐，除非你有额外的需求需要配置。
-首先取消rails&lt;/em&gt;helper.rb中这段代码的注释&lt;/p&gt;
+首先取消rails_helper.rb中这段代码的注释&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Dir[Rails.root.join(&amp;#39;spec/support/**/*.rb&amp;#39;)].each { |f| require f }&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;接下来在spec目录下创建一个support目录，并添加factory_girls.rb文件，代码如下：&lt;/p&gt;
@@ -139,8 +561,8 @@ guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这样也可以实现和第一种直接加代码段同样的效果（其实这种方式只是将配置抽离成文件形式而已）。
-最后在spec目录下添加factories.rb文件，这个文件就是factory&lt;em&gt;girl&lt;/em&gt;rails用来维护测试数据的，也就是取代rails fixtures功能的文件。我会在稍后简单介绍如何使用。
-4】整合database&lt;em&gt;cleaner，同样在rails&lt;/em&gt;helper.rb文件中加入database_cleaner的引入语句：&lt;/p&gt;
+最后在spec目录下添加factories.rb文件，这个文件就是factory_girl_rails用来维护测试数据的，也就是取代rails fixtures功能的文件。我会在稍后简单介绍如何使用。
+4】整合database_cleaner，同样在rails_helper.rb文件中加入database_cleaner的引入语句：&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;database_cleaner&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;5】初始化guard，在命令行执行如下命令：
@@ -179,7 +601,7 @@ guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并
 
 &lt;p&gt;【4】with factory_girl for unit test&lt;/p&gt;
 
-&lt;p&gt;从标题可以看出来，这部分要简单说明如何通过rspec和factory&lt;em&gt;girl一起对models进行单元测试。对models测试最核心的准备工作就是测试数据的维护，这里采用factory&lt;/em&gt;girl来管理，首先说明factory_girl中的数据是如何定义的。
+&lt;p&gt;从标题可以看出来，这部分要简单说明如何通过rspec和factory_girl一起对models进行单元测试。对models测试最核心的准备工作就是测试数据的维护，这里采用factory_girl来管理，首先说明factory_girl中的数据是如何定义的。
 之前提到过在spec目录下创建了一个factories.rb，这个文件就是存放原始测试数据的。这里以user为例简单示例代码如下：&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;FactoryGirl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:user&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
@@ -216,8 +638,8 @@ guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;【6】auth by devise in tegration test&lt;/p&gt;
 
-&lt;p&gt;当你用到devise作为登陆模块的时候，想要在集成测试中设置登陆权限时需要在rails&lt;em&gt;hepler.rb中添加Warden::Test::Helpers的引用，Warden是devise用来做登陆所依赖的gem，因为devise的方法无法在requests目录下很好的兼容，所以这里直接使用它底层依赖的gem进行登陆的设置。
-在rails&lt;/em&gt;helper.rb顶部添加如下语句。&lt;/p&gt;
+&lt;p&gt;当你用到devise作为登陆模块的时候，想要在集成测试中设置登陆权限时需要在rails_hepler.rb中添加Warden::Test::Helpers的引用，Warden是devise用来做登陆所依赖的gem，因为devise的方法无法在requests目录下很好的兼容，所以这里直接使用它底层依赖的gem进行登陆的设置。
+在rails_helper.rb顶部添加如下语句。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Warden&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Helpers&lt;/span&gt;     
 &lt;span class=&quot;no&quot;&gt;Warden&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_mode!&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -232,7 +654,7 @@ guard-rspec是一个自动化运行工具，他会帮你监测文件修改，并
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;a integration test for js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;更多用法请参考官方APIhttp://www.rubydoc.info/github/jnicklas/capybara&lt;/p&gt;
+&lt;p&gt;更多用法请参考官方APIhttp://&lt;a href=&quot;http://www.rubydoc.info/github/jnicklas/capybara&quot;&gt;www.rubydoc.info/github/jnicklas/capybara&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;【附录1】rails_helper.rb&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# This file is copied to spec/ when you run &amp;#39;rails generate rspec:install&amp;#39;&lt;/span&gt;
@@ -410,11 +832,11 @@ end
 &lt;p&gt;devise默认会在你的routes文件中生成如下路由&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;devise_for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:users&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;你可以通过&lt;code&gt;$ rake routes&lt;/code&gt;查看其对应的路由都有哪些，这里以登录注销为例自动生成的路由为users/sgin&lt;em&gt;in和users/sgin&lt;/em&gt;out。
+&lt;p&gt;你可以通过&lt;code&gt;$ rake routes&lt;/code&gt;查看其对应的路由都有哪些，这里以登录注销为例自动生成的路由为users/sgin_in和users/sgin_out。
 如果你想重命名路由，同时你又修改了路由对应的action，这个时候你就需要配置routes下的devise_for路由了。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;devise_for :users, controllers: { sessions: &amp;quot;users/sessions&amp;quot; }, path: &amp;quot;&amp;quot;, path_names: { sign_in: &amp;#39;login&amp;#39;, sign_out: &amp;#39;logout&amp;#39;, registration: &amp;#39;register&amp;#39; }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如上配置users路由sessions模块对应的controller是users/sessions&lt;em&gt;controller.rb文件，同时重命名登录路由sign&lt;/em&gt;in为login，sign&lt;em&gt;out为logout，并且我这里path设置为空，也就是说最初的user/sign&lt;/em&gt;in路由最终重命名为login。&lt;/p&gt;
+&lt;p&gt;如上配置users路由sessions模块对应的controller是users/sessions_controller.rb文件，同时重命名登录路由sign_in为login，sign_out为logout，并且我这里path设置为空，也就是说最初的user/sign_in路由最终重命名为login。&lt;/p&gt;
 
 &lt;p&gt;【6】adjust your controller&lt;/p&gt;
 
@@ -563,7 +985,7 @@ paperclip会在users表中添加如下四个字段：&lt;/p&gt;
     &lt;span class=&quot;n&quot;&gt;validates_attachment&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:avatar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;content_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;content_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;image/jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;image/jpeg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;image/png&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;image/gif&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;其中has&lt;em&gt;attached&lt;/em&gt;file用来配置图片缩放尺寸、逻辑存储路径、物理存储路径。validates_attachment用来配置上传图片的类型、大小等，更多配置可以参考github&lt;/p&gt;
+&lt;p&gt;其中has_attached_file用来配置图片缩放尺寸、逻辑存储路径、物理存储路径。validates_attachment用来配置上传图片的类型、大小等，更多配置可以参考github&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;https://github.com/thoughtbot/paperclip
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;【3】final work&lt;/p&gt;
@@ -618,10 +1040,10 @@ gem &amp;#39;responders&amp;#39;
 
 &lt;p&gt;执行如下命令生成migration以及models文件
 &lt;code&gt;rails g ckeditor:install --orm=active_record --backend=paperclip&lt;/code&gt;
-命令成功后会在你的db/migration目录下生成一个ckeditor&lt;em&gt;assets文件，执行
+命令成功后会在你的db/migration目录下生成一个ckeditor_assets文件，执行
 &lt;code&gt;$ rake db:migrate&lt;/code&gt;
-        自动化建立ckeditor&lt;/em&gt;assets表，这个表是用来存储你再进行文本编辑时上传的图片的。
-        之前的命令，除了生成migration文件外还会在models目录下创建一个ckeditor目录，目录下会有三个实体，查看可以发现一个是asset实体，另外两个分别是文件和图片的实体，大体可以知道这个是ckeditor插件用来自动维护上传的图片和文件所需的models，你可以修改has&lt;em&gt;attached&lt;/em&gt;file 来定义文件存放的路径，默认情况下是存放在public/ckeditor_assets目录下的。
+        自动化建立ckeditor_assets表，这个表是用来存储你再进行文本编辑时上传的图片的。
+        之前的命令，除了生成migration文件外还会在models目录下创建一个ckeditor目录，目录下会有三个实体，查看可以发现一个是asset实体，另外两个分别是文件和图片的实体，大体可以知道这个是ckeditor插件用来自动维护上传的图片和文件所需的models，你可以修改has_attached_file 来定义文件存放的路径，默认情况下是存放在public/ckeditor_assets目录下的。
 到目前为止初始化工作就差不多了。&lt;/p&gt;
 
 &lt;p&gt;【3】final work&lt;/p&gt;
@@ -652,7 +1074,7 @@ gem &amp;#39;responders&amp;#39;
 
 &lt;p&gt;【4】附录&lt;/p&gt;
 
-&lt;h4&gt;app/assets/javascript/ckeditor/config.js&lt;/h4&gt;
+&lt;h4 id=&quot;app/assets/javascript/ckeditor/config.js&quot;&gt;app/assets/javascript/ckeditor/config.js&lt;/h4&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;For licensing, see LICENSE.html or http://ckeditor.com/license&lt;/span&gt;
@@ -861,17 +1283,17 @@ gem &amp;#39;responders&amp;#39;
 以新建一个回复作为例子说明，首先在列表页添加回复按钮，传递参数名称为parent_id&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%= link_to &amp;#39;Reply&amp;#39;, new_message_path(:parent_id =&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在messages&lt;em&gt;controller中接收parent&lt;/em&gt;id并存储。&lt;/p&gt;
+&lt;p&gt;在messages_controller中接收parent_id并存储。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;
     &lt;span class=&quot;vi&quot;&gt;@message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:parent_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:parent_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;同时这里需要说明一下，messages表中本身不存在parten&lt;em&gt;id字段，Ancestry插件本身会对parent&lt;/em&gt;id进行维护并对messages表中ancestry字段进行存储修改。但是Rails保护机制中permit字段还是设置为parent_id&lt;/p&gt;
+&lt;p&gt;同时这里需要说明一下，messages表中本身不存在parten_id字段，Ancestry插件本身会对parent_id进行维护并对messages表中ancestry字段进行存储修改。但是Rails保护机制中permit字段还是设置为parent_id&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;message_params&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;permit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:parent_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;   
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;因为new方法中需要一个parent&lt;em&gt;id参数，在新增message时也需要这个参数，所以要再&lt;/em&gt;form页面中添加一个隐藏字段&lt;/p&gt;
+&lt;p&gt;因为new方法中需要一个parent_id参数，在新增message时也需要这个参数，所以要再_form页面中添加一个隐藏字段&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hidden_field&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:parent_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这样我们在index页面传递参数到new页面，并将参数以隐藏表单的方式传递给create方法，Ancestry会自动维护&amp;#39;parten-id&amp;#39; 这个字段并存储一个父及id们拼装而成的字符串到ancestry字段（比如：14/3/4）。
@@ -1070,7 +1492,7 @@ color:nth($linkColor,1);
       <item>
         <title>Sublime Text</title>
         <description>&lt;p&gt;Sublime Text是一款相对好用的前端开发工具，并且可以无限期的免费试用。
-可以在官网下载安装特定系统下的版本：http://www.sublimetext.com/
+可以在官网下载安装特定系统下的版本：&lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;http://www.sublimetext.com/&lt;/a&gt;
 sublime本身的功能并不是十分强大，但他可以通过package control安装插件来增强功能。&lt;/p&gt;
 
 &lt;p&gt;【1】Sublime Text常用快捷键&lt;/p&gt;
@@ -1215,256 +1637,6 @@ sublime本身的功能并不是十分强大，但他可以通过package control�
         <pubDate>Wed, 29 Oct 2014 00:00:00 +0800</pubDate>
         <link>http://yourdomain.com/frontend/sublime-text</link>
         <guid isPermaLink="true">http://yourdomain.com/frontend/sublime-text</guid>
-        
-        
-        <category>frontend</category>
-        
-      </item>
-    
-      <item>
-        <title>Grunt</title>
-        <description>&lt;p&gt;Grunt是一个JavaScript构建工具。&lt;/p&gt;
-
-&lt;h5&gt;【1】Install Grunt&lt;/h5&gt;
-
-&lt;p&gt;在安装Grunt前需要安装node NPM。
-首先全局安装grunt-cli（grunt-cli为grunt的命令工具）。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ npm install -g grunt-cli&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在开发的项目目录下安装grunt。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ npm install grunt&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;通过&amp;quot;—version&amp;quot;命令查看当前cli和grunt版本&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ grunt —version&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;通过git安装模板插件&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ git clone https://github.com/gruntjs/grunt-init-gruntfile.git ~/.grunt-init/gruntplugin&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;通过grunt-init --help命令可以查看到Available templates，当前安装的模板名称为gruntplugin。
-安装grunt常用的插件。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ npm install grunt-contrib-uglify&lt;/code&gt; &lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ npm install grunt-contrib-concat&lt;/code&gt; &lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ npm install grunt-contrib-watch&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;以上基本需要安装的东西都完成了，接下来进行配置。
-当然这里你也可以不单独安装需要的plugin，而是通过npm install 命令直接安装package.json文件中引入的全部plugins。&lt;/p&gt;
-
-&lt;p&gt;【2】Set Grunt Config
-Grunt项目需要package.json和Gruntfile.js/Gruntfile.coffee这两个配置文件。其中package.json定义了项目中需要引入的plugins，Gruntfile.js定义了Grunt的配置信息。
-首先通过grunt-init [模板名]创建Gruntfile.js文件和package.json文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ grunt-init gruntplugin&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;接下来通过npm init命令根据提示输入项目相关相应参数，完善package.json文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ npm init&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这里也可以clone我使用的项目&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ git clone https://github.com/dandananddada/helloGrunt.git&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在根目录下执行&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ npm install&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;接下来就可以通过Grunt的命令查看定义的Task，并且执行相应任务了。
-具体任务相关数据配置的说明可参考官网，不在这里细说了。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://gruntjs.com/configuring-tasks&quot;&gt;http://gruntjs.com/configuring-tasks&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;【附录】Gruntfile.js&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;app&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;dist&amp;#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;package.json&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//sass-&amp;gt;css编译插件&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;sourceMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;expand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;cwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/styles/sass&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;*.scss&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;app/styles/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;ext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.css&amp;#39;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//清除build后生成的文件（清空dist目录）&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                          &lt;span class=&quot;s1&quot;&gt;&amp;#39;.tmp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                          &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/*&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                          &lt;span class=&quot;s1&quot;&gt;&amp;#39;!&amp;lt;%= config.dist %&amp;gt;/.git*&amp;#39;&lt;/span&gt;
-                      &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//合并js和css文件&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/js/**/*.js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/combine/&amp;lt;%= pkg.name %&amp;gt;.js&amp;#39;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/styles/**/*.css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/combine/&amp;lt;%= pkg.name %&amp;gt;.css&amp;#39;&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 压缩css文件&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;cssmin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// 保持目录结构压缩&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;compress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;expand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;cwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/styles/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;*.css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;!*.min.css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/release/css/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;ext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.min.css&amp;#39;&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// 合并为一个文件后压缩&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;expand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;cwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/combine/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;*.css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;!*.min.css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/release&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;nx&quot;&gt;ext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.min.css&amp;#39;&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 压缩js文件&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;uglify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;banner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/*! &amp;lt;%= pkg.name %&amp;gt; &amp;lt;%= grunt.template.today(&amp;quot;yyyy-mm-dd&amp;quot;) %&amp;gt; */\n&amp;#39;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// 保持目录结构压缩&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;compress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;mangle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;compress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;drop_console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;report&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;min&amp;quot;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;expand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;cwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;**/*.js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/release/js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;ext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.min.js&amp;#39;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// 合并为一个文件后压缩&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;mangle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;compress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;drop_console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;report&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;min&amp;quot;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;expand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;cwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/combine&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;**/*.js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.dist %&amp;gt;/release&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;ext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.min.js&amp;#39;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 配置ctrl+s触发任务&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/styles/sass/**/*.scss&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;tasks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;sass&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;livereload&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;livereload&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= connect.options.livereload %&amp;gt;&amp;#39;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                    &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/{,*/}*.html&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/{,*/}*.css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;%= config.app %&amp;gt;/images/{,*/}*&amp;#39;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 将当前站点作为服务器启动&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;livereload&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;35729&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;hostname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;livereload&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 针对测试作为服务启动&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;karma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;configFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;karma.conf.js&amp;#39;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-sass&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-contrib-clean&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-contrib-concat&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-contrib-cssmin&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-contrib-uglify&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-contrib-watch&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-contrib-connect&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;grunt-karma&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// 将sass文件编译为css文件&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;compile&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;sass&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 清理dist目录&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// grunt clean,grunt-contrib-clean内置任务&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 分别合并js和css文件为一个文件&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;combine&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;compile&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;concat:css&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;concat:js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 保持原目录结构压缩css文件和js文件&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;compress&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;compile&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cssmin:compress&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;uglify:compress&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 部署js文件和css文件（分别将js和css文件合并压缩为一个文件）&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;build&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;clean:dist&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;compile&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;combine&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cssmin:build&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;uglify:build&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//将当前站点作为服务启动&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;server&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;connect:livereload&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;watch&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;watch:compile&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 启动js单元测试服务&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;test&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;karma&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 设置grunt默认任务为server&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;server&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Thu, 23 Oct 2014 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/frontend/grunt</link>
-        <guid isPermaLink="true">http://yourdomain.com/frontend/grunt</guid>
         
         
         <category>frontend</category>

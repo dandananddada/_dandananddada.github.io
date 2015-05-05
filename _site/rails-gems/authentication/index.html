@@ -42,6 +42,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -111,11 +113,11 @@ end
 <p>devise默认会在你的routes文件中生成如下路由</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">devise_for</span> <span class="ss">:users</span>
 </code></pre></div>
-<p>你可以通过<code>$ rake routes</code>查看其对应的路由都有哪些，这里以登录注销为例自动生成的路由为users/sgin<em>in和users/sgin</em>out。
+<p>你可以通过<code>$ rake routes</code>查看其对应的路由都有哪些，这里以登录注销为例自动生成的路由为users/sgin_in和users/sgin_out。
 如果你想重命名路由，同时你又修改了路由对应的action，这个时候你就需要配置routes下的devise_for路由了。</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">devise_for :users, controllers: { sessions: &quot;users/sessions&quot; }, path: &quot;&quot;, path_names: { sign_in: &#39;login&#39;, sign_out: &#39;logout&#39;, registration: &#39;register&#39; }
 </code></pre></div>
-<p>如上配置users路由sessions模块对应的controller是users/sessions<em>controller.rb文件，同时重命名登录路由sign</em>in为login，sign<em>out为logout，并且我这里path设置为空，也就是说最初的user/sign</em>in路由最终重命名为login。</p>
+<p>如上配置users路由sessions模块对应的controller是users/sessions_controller.rb文件，同时重命名登录路由sign_in为login，sign_out为logout，并且我这里path设置为空，也就是说最初的user/sign_in路由最终重命名为login。</p>
 
 <p>【6】adjust your controller</p>
 

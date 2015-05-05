@@ -42,6 +42,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -101,17 +103,17 @@
 以新建一个回复作为例子说明，首先在列表页添加回复按钮，传递参数名称为parent_id</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="sx">%= link_to &#39;Reply&#39;, new_message_path(:parent_id =</span><span class="o">&gt;</span> <span class="n">message</span><span class="p">)</span> <span class="o">%&gt;</span>
 </code></pre></div>
-<p>在messages<em>controller中接收parent</em>id并存储。</p>
+<p>在messages_controller中接收parent_id并存储。</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">new</span>
     <span class="vi">@message</span> <span class="o">=</span> <span class="no">Message</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:parent_id</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:parent_id</span><span class="o">]</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
-<p>同时这里需要说明一下，messages表中本身不存在parten<em>id字段，Ancestry插件本身会对parent</em>id进行维护并对messages表中ancestry字段进行存储修改。但是Rails保护机制中permit字段还是设置为parent_id</p>
+<p>同时这里需要说明一下，messages表中本身不存在parten_id字段，Ancestry插件本身会对parent_id进行维护并对messages表中ancestry字段进行存储修改。但是Rails保护机制中permit字段还是设置为parent_id</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">message_params</span>
   <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:message</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">:parent_id</span><span class="p">)</span>
 <span class="k">end</span>   
 </code></pre></div>
-<p>因为new方法中需要一个parent<em>id参数，在新增message时也需要这个参数，所以要再</em>form页面中添加一个隐藏字段</p>
+<p>因为new方法中需要一个parent_id参数，在新增message时也需要这个参数，所以要再_form页面中添加一个隐藏字段</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;%=</span> <span class="n">f</span><span class="o">.</span><span class="n">hidden_field</span> <span class="ss">:parent_id</span> <span class="o">%&gt;</span>
 </code></pre></div>
 <p>这样我们在index页面传递参数到new页面，并将参数以隐藏表单的方式传递给create方法，Ancestry会自动维护&#39;parten-id&#39; 这个字段并存储一个父及id们拼装而成的字符串到ancestry字段（比如：14/3/4）。

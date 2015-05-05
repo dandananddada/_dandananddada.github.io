@@ -42,6 +42,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -78,10 +80,10 @@ gem &#39;responders&#39;
 
 <p>执行如下命令生成migration以及models文件
 <code>rails g ckeditor:install --orm=active_record --backend=paperclip</code>
-命令成功后会在你的db/migration目录下生成一个ckeditor<em>assets文件，执行
+命令成功后会在你的db/migration目录下生成一个ckeditor_assets文件，执行
 <code>$ rake db:migrate</code>
-        自动化建立ckeditor</em>assets表，这个表是用来存储你再进行文本编辑时上传的图片的。
-        之前的命令，除了生成migration文件外还会在models目录下创建一个ckeditor目录，目录下会有三个实体，查看可以发现一个是asset实体，另外两个分别是文件和图片的实体，大体可以知道这个是ckeditor插件用来自动维护上传的图片和文件所需的models，你可以修改has<em>attached</em>file 来定义文件存放的路径，默认情况下是存放在public/ckeditor_assets目录下的。
+        自动化建立ckeditor_assets表，这个表是用来存储你再进行文本编辑时上传的图片的。
+        之前的命令，除了生成migration文件外还会在models目录下创建一个ckeditor目录，目录下会有三个实体，查看可以发现一个是asset实体，另外两个分别是文件和图片的实体，大体可以知道这个是ckeditor插件用来自动维护上传的图片和文件所需的models，你可以修改has_attached_file 来定义文件存放的路径，默认情况下是存放在public/ckeditor_assets目录下的。
 到目前为止初始化工作就差不多了。</p>
 
 <p>【3】final work</p>
@@ -112,7 +114,7 @@ gem &#39;responders&#39;
 
 <p>【4】附录</p>
 
-<h4>app/assets/javascript/ckeditor/config.js</h4>
+<h4 id="app/assets/javascript/ckeditor/config.js">app/assets/javascript/ckeditor/config.js</h4>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*</span>
 <span class="cm">Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.</span>
 <span class="cm">For licensing, see LICENSE.html or http://ckeditor.com/license</span>
